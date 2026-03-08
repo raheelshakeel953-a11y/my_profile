@@ -283,7 +283,7 @@
       }
 
       .hero-left h1 {
-        font-size: 58px;
+        font-size: 54px;
         line-height: 1.1;
         margin-bottom: 15px;
         background: linear-gradient(
@@ -311,7 +311,7 @@
       .hero-left h3 {
         font-size: 22px;
         font-weight: 500;
-        margin-bottom: 20px;
+        margin-bottom: 17px;
         color: var(--text);
       }
 
@@ -2351,3 +2351,4 @@
       }
 
     
+
