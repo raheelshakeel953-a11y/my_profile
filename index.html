@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muhammad Raheel Shakeel | MERN Stack Developer</title>
-<link rel="stylesheet" href="style.css">   <!-- Google Font -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Font -->
     <!-- 
   Add this code inside the <head> section of your HTML document.
   This creates a professional favicon with the initials "AHR" 
   matching the style from your image reference.
 -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-   
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233454d1'/><text x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-weight='bold'>MPS</text></svg>"
@@ -40,7 +41,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
   </head>
   <body>
     <!-- Particles Background -->
@@ -109,10 +109,14 @@
               <i class="fa-solid fa-envelope"></i> Get In Touch
             </a>
 
-                <a href="cv.pdf" target="_blank" class="btn outline" id="downloadCV">
-  <i class="fa-solid fa-download"></i> Download CV
-</a>
-
+            <a
+              href="cv.pdf"
+              target="_blank"
+              class="btn outline"
+              id="downloadCV"
+            >
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
 
             <a href="#projects" class="btn outline">
               <i class="fa-solid fa-code"></i> View Projects
@@ -137,12 +141,7 @@
 
         <div class="hero-right">
           <div class="profile-circle">
-            <img
-              src="./lprofile.jpeg"
-              alt="Muhammad Raheel Shakeel"
-              onerror="
-                this.src =
-                  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80'"/>
+            <img src="./profile.jpeg" />
 
             <div class="floating-icon react">
               <i class="fa-brands fa-react"></i>
@@ -766,8 +765,12 @@
           <!-- Right side: Send a Message -->
           <div class="contact-form">
             <h2>Send a Message</h2>
- <form  target="_blank" action="https://formsubmit.co/raheelshakeel953@gmail.com" method="POST">        
-        <div class="form-group">
+            <form
+              target="_blank"
+              action="https://formsubmit.co/raheelshakeel953@gmail.com"
+              method="POST"
+            >
+              <div class="form-group">
                 <label for="name"><i class="fas fa-user"></i> Name</label>
                 <input
                   type="text"
@@ -1099,113 +1102,113 @@
     });
 
     // Skill Progress Bars Animation
-      (function() {
-    // Configuration
-    const ANIMATION_DELAY = 100; // ms between category animations
-    const OFFSET = 150; // pixels from viewport to trigger animation
+    (function () {
+      // Configuration
+      const ANIMATION_DELAY = 100; // ms between category animations
+      const OFFSET = 150; // pixels from viewport to trigger animation
 
-    // Get all elements to animate
-    const sectionTitle = document.querySelector('.section-title');
-    const skillCategories = document.querySelectorAll('.skill-category');
-    
-    // Store original data for skill items
-    skillCategories.forEach((category, catIndex) => {
-      const items = category.querySelectorAll('.skill-item');
-      items.forEach((item, itemIndex) => {
-        // Set CSS variable for staggered animation
-        item.style.setProperty('--item-index', itemIndex + 1);
+      // Get all elements to animate
+      const sectionTitle = document.querySelector(".section-title");
+      const skillCategories = document.querySelectorAll(".skill-category");
+
+      // Store original data for skill items
+      skillCategories.forEach((category, catIndex) => {
+        const items = category.querySelectorAll(".skill-item");
+        items.forEach((item, itemIndex) => {
+          // Set CSS variable for staggered animation
+          item.style.setProperty("--item-index", itemIndex + 1);
+        });
       });
-    });
 
-    // Function to check if element is in viewport
-    function isElementInViewport(el) {
-      if (!el) return false;
-      const rect = el.getBoundingClientRect();
-      return rect.top < window.innerHeight - OFFSET && rect.bottom > 0;
-    }
-
-    // Animate skill bars with target percentages
-    function animateSkillBars() {
-      const progressBars = document.querySelectorAll('.skill-progress');
-      progressBars.forEach(bar => {
-        if (bar.dataset.animated === 'true') return;
-        
-        const parentSection = bar.closest('.skill-category');
-        if (!parentSection) return;
-        
-        // Only animate if parent category is visible or animated
-        if (parentSection.classList.contains('animated') || isElementInViewport(parentSection)) {
-          const targetWidth = bar.getAttribute('data-width') || '0';
-          bar.style.width = targetWidth + '%';
-          bar.dataset.animated = 'true';
-        }
-      });
-    }
-
-    // Main animation trigger
-    function animateOnScroll() {
-      // Animate section title
-      if (sectionTitle && !sectionTitle.classList.contains('animated')) {
-        if (isElementInViewport(sectionTitle)) {
-          sectionTitle.classList.add('animated');
-        }
+      // Function to check if element is in viewport
+      function isElementInViewport(el) {
+        if (!el) return false;
+        const rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight - OFFSET && rect.bottom > 0;
       }
 
-      // Animate skill categories one by one
-      skillCategories.forEach((category, index) => {
-        if (!category.classList.contains('animated')) {
-          if (isElementInViewport(category)) {
-            // Add delay for cascade effect
-            setTimeout(() => {
-              category.classList.add('animated');
-              // Force reflow to ensure animation starts
-              void category.offsetWidth;
-              
-              // Animate skill bars within this category
-              const bars = category.querySelectorAll('.skill-progress');
-              bars.forEach(bar => {
-                const targetWidth = bar.getAttribute('data-width') || '0';
-                bar.style.width = targetWidth + '%';
-                bar.dataset.animated = 'true';
-              });
-            }, index * ANIMATION_DELAY);
+      // Animate skill bars with target percentages
+      function animateSkillBars() {
+        const progressBars = document.querySelectorAll(".skill-progress");
+        progressBars.forEach((bar) => {
+          if (bar.dataset.animated === "true") return;
+
+          const parentSection = bar.closest(".skill-category");
+          if (!parentSection) return;
+
+          // Only animate if parent category is visible or animated
+          if (
+            parentSection.classList.contains("animated") ||
+            isElementInViewport(parentSection)
+          ) {
+            const targetWidth = bar.getAttribute("data-width") || "0";
+            bar.style.width = targetWidth + "%";
+            bar.dataset.animated = "true";
+          }
+        });
+      }
+
+      // Main animation trigger
+      function animateOnScroll() {
+        // Animate section title
+        if (sectionTitle && !sectionTitle.classList.contains("animated")) {
+          if (isElementInViewport(sectionTitle)) {
+            sectionTitle.classList.add("animated");
           }
         }
+
+        // Animate skill categories one by one
+        skillCategories.forEach((category, index) => {
+          if (!category.classList.contains("animated")) {
+            if (isElementInViewport(category)) {
+              // Add delay for cascade effect
+              setTimeout(() => {
+                category.classList.add("animated");
+                // Force reflow to ensure animation starts
+                void category.offsetWidth;
+
+                // Animate skill bars within this category
+                const bars = category.querySelectorAll(".skill-progress");
+                bars.forEach((bar) => {
+                  const targetWidth = bar.getAttribute("data-width") || "0";
+                  bar.style.width = targetWidth + "%";
+                  bar.dataset.animated = "true";
+                });
+              }, index * ANIMATION_DELAY);
+            }
+          }
+        });
+
+        // Also animate any visible bars that might have been missed
+        animateSkillBars();
+      }
+
+      // Initial animation on load with slight delay
+      window.addEventListener("load", () => {
+        setTimeout(animateOnScroll, 300);
+
+        // Also set a backup timer for bars that might not have animated
+        setTimeout(animateSkillBars, 800);
       });
 
-      // Also animate any visible bars that might have been missed
-      animateSkillBars();
-    }
+      // Throttled scroll handler
+      let ticking = false;
+      window.addEventListener("scroll", () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            animateOnScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
 
-    // Initial animation on load with slight delay
-    window.addEventListener('load', () => {
-      setTimeout(animateOnScroll, 300);
-      
-      // Also set a backup timer for bars that might not have animated
-      setTimeout(animateSkillBars, 800);
-    });
+      // Also trigger on resize
+      window.addEventListener("resize", animateOnScroll);
 
-    // Throttled scroll handler
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          animateOnScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-
-    // Also trigger on resize
-    window.addEventListener('resize', animateOnScroll);
-
-    // Manual trigger for any elements that are already visible
-    setTimeout(animateOnScroll, 500);
-  })();
-
-
- 
+      // Manual trigger for any elements that are already visible
+      setTimeout(animateOnScroll, 500);
+    })();
 
     // Create modal container if it doesn't exist
     if (!document.getElementById("projectModal")) {
@@ -1589,49 +1592,45 @@
       });
     })();
 
- (function() {
-    const form = document.querySelector('.contact-form form');
-    
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Stop default redirect
-        
-        const formData = new FormData(form);
-        
-        // Show sending state
-        const btn = form.querySelector('button[type="submit"]');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        btn.disabled = true;
-        
-        // Send via fetch (no page reload)
-        fetch(form.action, {
-          method: 'POST',
-          body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            alert('✅ Thank you! Your message has been sent successfully.');
-            form.reset(); // Clear the form
-          } else {
-            alert('❌ Something went wrong. Please try again.');
-          }
-        })
-        .catch(error => {
-          alert('❌ Network error. Please check your connection.');
-          console.error(error);
-        })
-        .finally(() => {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
+    (function () {
+      const form = document.querySelector(".contact-form form");
+
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault(); // Stop default redirect
+
+          const formData = new FormData(form);
+
+          // Show sending state
+          const btn = form.querySelector('button[type="submit"]');
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          btn.disabled = true;
+
+          // Send via fetch (no page reload)
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                alert("✅ Thank you! Your message has been sent successfully.");
+                form.reset(); // Clear the form
+              } else {
+                alert("❌ Something went wrong. Please try again.");
+              }
+            })
+            .catch((error) => {
+              alert("❌ Network error. Please check your connection.");
+              console.error(error);
+            })
+            .finally(() => {
+              btn.innerHTML = originalText;
+              btn.disabled = false;
+            });
         });
-      });
-    }
-  })();
-
-
+      }
+    })();
   </script>
 </html>
-
-
