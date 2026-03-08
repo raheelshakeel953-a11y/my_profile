@@ -219,8 +219,8 @@
       }
 
       .theme-toggle {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -234,13 +234,13 @@
       }
 
       .theme-toggle:hover {
-        transform: rotate(30deg) scale(1.1);
+        transform: rotate(20deg) scale(1.1);
         box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
       }
 
       .mobile-menu {
         display: none;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         cursor: pointer;
         color: var(--text);
       }
@@ -251,7 +251,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 120px 0 60px;
+        padding: 10px 0 40px;
         width: 100%;
       }
 
@@ -283,7 +283,7 @@
       }
 
       .hero-left h1 {
-        font-size: 54px;
+        font-size: 45px;
         line-height: 1.1;
         margin-bottom: 15px;
         background: linear-gradient(
@@ -477,6 +477,7 @@
       }
 
       .contact-info span:hover {
+    
         background: rgba(56, 189, 248, 0.2);
         transform: translateX(5px);
         border-color: var(--accent);
@@ -492,8 +493,8 @@
       }
 
       .profile-circle {
-        width: 400px;
-        height: 400px;
+        width: 500px;
+        height: 500px;
         max-width: 100%;
         max-height: 100%;
         border-radius: 50%;
@@ -526,8 +527,8 @@
       }
 
       .profile-circle img {
-        width: 85%;
-        height: 85%;
+        width: 90%;
+        height: 90%;
         border-radius: 50%;
         z-index: 2;
         object-fit: cover;
@@ -535,8 +536,8 @@
       }
 
       .floating-icon {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
         background: var(--card);
         display: flex;
@@ -550,7 +551,7 @@
       }
 
       .floating-icon i {
-        font-size: 24px;
+        font-size: 26px;
       }
 
       .floating-icon.react {
@@ -2351,4 +2352,5 @@
       }
 
     
+
 
