@@ -283,9 +283,9 @@
       }
 
       .hero-left h1 {
-        font-size: 43px;
+        font-size: 39px;
         line-height: 1.1;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         background: linear-gradient(
           90deg,
           var(--accent),
